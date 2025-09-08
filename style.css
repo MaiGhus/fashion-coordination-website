@@ -248,3 +248,34 @@ footer a {
   font-size: 1rem;
   color: #444;
 }
+
+
+/* Make all images scale inside containers */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Look Page: stack nicely on small screens */
+@media (max-width: 600px) {
+  .look-container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .main-look img {
+    max-width: 100%;
+  }
+
+  .square-box {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 12px;
+  }
+}
+
+/* Ensure footer doesn’t shrink */
+footer {
+  flex-shrink: 0;
+}
+
