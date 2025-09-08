@@ -254,28 +254,62 @@ footer a {
 img {
   max-width: 100%;
   height: auto;
-  display: block;
 }
 
-/* Look Page: stack nicely on small screens */
-@media (max-width: 600px) {
-  .look-container {
-    flex-direction: column;
+
+
+@media (max-width: 480px) {
+  header {
+    padding: 20px 10px;
+  }
+
+  header h1 { 
+    font-size: 1.2rem; 
+  }
+
+  header p { 
+    font-size: 0.8rem; 
+  }
+
+  /* Search bar full width */
+  .search-bar input {
+    width: 100%;
+    max-width: none;
+    font-size: 0.9rem;
+  }
+
+  /* Gallery: single column on very small screens */
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 10px;
+  }
+
+  /* Makeup: also single column */
+  .makeup-gallery {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 0 10px 30px;
+  }
+
+  /* Look page square box */
+  .square-box {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
     padding: 10px;
   }
 
   .main-look img {
+    width: 100%;
     max-width: 100%;
-  }
-
-  .square-box {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 12px;
+    border-radius: 10px;
   }
 }
+
 
 /* Ensure footer doesn’t shrink */
 footer {
   flex-shrink: 0;
 }
+
 
