@@ -10,31 +10,33 @@ body {
   background: #f9f9f9;
   color: #111;
   line-height: 1.6;
+  width: 100%;
 }
 
 /* Header */
 header {
   text-align: center;
-  padding: 20px;
+  padding: 20px 10px;
   background: #222;
   color: white;
 }
 
 header h1 {
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 
 header p {
-  margin-top: 8px;
+  margin-top: 5px;
   font-size: 1rem;
   color: #ddd;
 }
 
-/* ✅ Search Bar */
+/* Search Bar */
 .search-bar {
-  margin-top: 15px;
   display: flex;
   justify-content: center;
+  margin: 15px 0;
+  width: 100%;
 }
 
 .search-bar input {
@@ -48,79 +50,46 @@ header p {
   color: #111;
 }
 
-/* ✅ Fashion Looks Gallery */
-.gallery {
+/* Gallery */
+.gallery, .makeup-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 15px;
-  padding: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 12px;
+  padding: 10px 15px;
 }
 
-.look-card {
+.look-card, .makeup-card {
+  text-align: center;
   background: #fff;
   border-radius: 8px;
   overflow: hidden;
-  text-align: center;
-  padding: 10px;
+  padding: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.look-card img {
+.look-card img, .makeup-card img {
   width: 100%;
+  height: auto;
   border-radius: 6px;
   display: block;
 }
 
-.look-card p {
-  display: block;
-  margin-top: 8px;
+.look-card p, .makeup-card p {
+  margin-top: 6px;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #111;
 }
 
-/* ✅ Makeup Section */
-#makeup {
-  padding: 20px;
-}
-
+/* Section Titles */
 .section-title {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
   text-align: center;
+  font-size: 1.5rem;
+  margin: 20px 0;
   color: #333;
 }
 
-.makeup-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 15px;
-}
-
-.makeup-card {
-  background: #fff;
-  border-radius: 8px;
-  overflow: hidden;
-  text-align: center;
-  padding: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.makeup-card img {
-  width: 100%;
-  border-radius: 6px;
-  display: block;
-}
-
-.makeup-card p {
-  display: block;
-  margin-top: 8px;
-  font-weight: bold;
-  font-size: 1rem;
-  color: #111;
-}
-
-/* ✅ Footer */
+/* Footer */
 footer {
   text-align: center;
   padding: 15px;
@@ -129,12 +98,36 @@ footer {
   margin-top: 20px;
 }
 
-/* 📱 Mobile adjustments */
-@media (max-width: 600px) {
+/* Mobile adjustments */
+@media (max-width: 768px) {
   header h1 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+  }
+  header p {
+    font-size: 0.95rem;
   }
   .search-bar input {
     font-size: 0.9rem;
+    width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.4rem;
+  }
+  header p {
+    font-size: 0.85rem;
+  }
+  .search-bar input {
+    width: 100%;
+    font-size: 0.85rem;
+  }
+  .gallery, .makeup-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 8px;
+  }
+  .look-card p, .makeup-card p {
+    font-size: 0.8rem;
   }
 }
