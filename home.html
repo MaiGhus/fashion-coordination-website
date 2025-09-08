@@ -5,89 +5,160 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fashion Coordination</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background: #222;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    header p {
+      margin: 5px 0 0;
+      font-size: 14px;
+      color: #ddd;
+    }
+
+    /* Search bar */
+    .search-container {
+      text-align: center;
+      margin: 15px;
+    }
+
+    .search-container input {
+      width: 90%;
+      max-width: 400px;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    section {
+      margin: 20px;
+    }
+
+    section h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #222;
+      text-align: center;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 15px;
+    }
+
+    .gallery a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 10px;
+      display: block;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .caption {
+      text-align: center;
+      font-size: 14px;
+      margin-top: 6px;
+      color: #333;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 18px;
+      }
+      section h2 {
+        font-size: 16px;
+      }
+    }
+  </style>
 </head>
 <body>
+
   <header>
     <h1>Fashion Coordination</h1>
-    <p>Choose your favorite look or makeup to explore its pieces</p>
-    <div class="search-bar">
-      <input type="text" id="searchInput" placeholder="Search Look or Makeup (e.g., Look 5, Makeup 2)">
-    </div>
+    <p>Select a look to explore its pieces</p>
   </header>
 
-  <!-- Fashion Looks Gallery -->
-  <main class="gallery" id="gallery">
-    <div class="look-card" data-name="Look 1">
-      <a href="look1.html"><img src="images/look1.jpg" alt="Look 1"></a>
-      <p>Look 1</p>
-    </div>
-    <div class="look-card" data-name="Look 2">
-      <a href="look2.html"><img src="images/look2.jpg" alt="Look 2"></a>
-      <p>Look 2</p>
-    </div>
-    <div class="look-card" data-name="Look 3">
-      <a href="look3.html"><img src="images/look3.jpg" alt="Look 3"></a>
-      <p>Look 3</p>
-    </div>
-    <div class="look-card" data-name="Look 4">
-      <a href="look4.html"><img src="images/look4.jpg" alt="Look 4"></a>
-      <p>Look 4</p>
-    </div>
-    <div class="look-card" data-name="Look 5">
-      <a href="look5.html"><img src="images/look5.jpg" alt="Look 5"></a>
-      <p>Look 5</p>
-    </div>
-    <div class="look-card" data-name="Look 6">
-      <a href="look6.html"><img src="images/look6.jpg" alt="Look 6"></a>
-      <p>Look 6</p>
-    </div>
-    <div class="look-card" data-name="Look 7">
-      <a href="look7.html"><img src="images/look7.jpg" alt="Look 7"></a>
-      <p>Look 7</p>
-    </div>
-  </main>
+  <!-- Search Bar -->
+  <div class="search-container">
+    <input type="text" id="searchBar" placeholder="Search looks or makeup..." onkeyup="searchItems()">
+  </div>
 
-  <!-- Makeup Section -->
-  <section id="makeup">
-    <h2 class="section-title">Makeup Collection</h2>
-    <div class="makeup-gallery">
-      <div class="makeup-card" data-name="Makeup 1">
-        <a href="https://onelink.shein.com/16/509p1q24p1ji" target="_blank">
-          <img src="makup/sb25032521476261499.jpg" alt="Makeup 1">
-        </a>
-        <p>Makeup 1</p>
-      </div>
-      <div class="makeup-card" data-name="Makeup 2">
-        <a href="https://onelink.shein.com/16/509zywxuokl2" target="_blank">
-          <img src="makup/sb2106251851479043.jpg" alt="Makeup 2">
-        </a>
-        <p>Makeup 2</p>
-      </div>
-      <div class="makeup-card" data-name="Makeup 3">
-        <a href="https://onelink.shein.com/16/50a10ub8ny3n" target="_blank">
-          <img src="makup/sb2306276181121814.jpg" alt="Makeup 3">
-        </a>
-        <p>Makeup 3</p>
-      </div>
+  <!-- Fashion Looks Section -->
+  <section>
+    <h2>Fashion Looks</h2>
+    <div class="gallery">
+      <a href="look1.html">
+        <img src="looks/look1.jpg" alt="Look 1">
+        <div class="caption">Look 1</div>
+      </a>
+      <a href="look2.html">
+        <img src="looks/look2.jpg" alt="Look 2">
+        <div class="caption">Look 2</div>
+      </a>
+      <a href="look3.html">
+        <img src="looks/look3.jpg" alt="Look 3">
+        <div class="caption">Look 3</div>
+      </a>
     </div>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Fashion Coordination. All rights reserved.</p>
-  </footer>
+  <!-- Makeup Section -->
+  <section>
+    <h2>Makeup</h2>
+    <div class="gallery">
+      <a href="https://m.shein.com/item1" target="_blank">
+        <img src="makup/sb25032521476261499.jpg" alt="Makeup 1">
+        <div class="caption">Makeup 1</div>
+      </a>
+      <a href="https://m.shein.com/item2" target="_blank">
+        <img src="makup/sb2106251851479043.jpg" alt="Makeup 2">
+        <div class="caption">Makeup 2</div>
+      </a>
+      <a href="https://m.shein.com/item3" target="_blank">
+        <img src="makup/sb2306276181121814.jpg" alt="Makeup 3">
+        <div class="caption">Makeup 3</div>
+      </a>
+    </div>
+  </section>
 
-  <!-- Search Script (Filters both Looks and Makeup) -->
   <script>
-    const searchInput = document.getElementById("searchInput");
-    const items = document.querySelectorAll(".look-card, .makeup-card");
+    function searchItems() {
+      let input = document.getElementById("searchBar").value.toLowerCase();
+      let items = document.querySelectorAll(".gallery a");
 
-    searchInput.addEventListener("keyup", function() {
-      const filter = searchInput.value.toLowerCase();
       items.forEach(item => {
-        const name = item.getAttribute("data-name").toLowerCase();
-        item.style.display = name.includes(filter) ? "block" : "none";
+        let text = item.textContent.toLowerCase();
+        if (text.includes(input)) {
+          item.style.display = "";
+        } else {
+          item.style.display = "none";
+        }
       });
-    });
+    }
   </script>
+
 </body>
 </html>
