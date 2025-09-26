@@ -1,11 +1,11 @@
-/* General Reset */
+/* ---------------- General Reset ---------------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Body */
+/* ---------------- Body ---------------- */
 body {
   font-family: "Helvetica Neue", Arial, sans-serif;
   background: #fdfdfd;
@@ -15,7 +15,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Header */
+/* ---------------- Header ---------------- */
 header {
   text-align: center;
   background: linear-gradient(135deg, #111, #444);
@@ -34,16 +34,31 @@ header p {
   opacity: 0.9;
 }
 
-/* Shared Gallery (Fashion + Makeup) */
+/* ---------------- Search Bar ---------------- */
+.search-bar {
+  margin-top: 20px;
+}
+
+.search-bar input {
+  width: 90%;
+  max-width: 400px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+}
+
+.search-bar input:focus {
+  border-color: #111;
+}
+
+/* ---------------- Gallery (Home & Makeup) ---------------- */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 15px;
   padding: 20px;
-}
-
-.look-card {
-  text-align: center;
 }
 
 .gallery a {
@@ -67,82 +82,14 @@ header p {
   display: block;
 }
 
-.look-card p {
+.look-card p, .makeup-card p {
   margin-top: 8px;
   font-weight: bold;
   font-size: 1rem;
   color: #333;
 }
 
-/* Section Title */
-.section-title {
-  text-align: center;
-  font-size: 2rem;
-  margin: 50px 0 20px;
-  color: #333;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 15px;
-  background: #111;
-  color: #fff;
-  margin-top: 30px;
-}
-
-footer a {
-  color: #fff;
-  text-decoration: underline;
-}
-
-/* Search Bar */
-.search-bar {
-  margin-top: 20px;
-}
-
-.search-bar input {
-  width: 90%;
-  max-width: 400px;
-  padding: 10px 15px;
-  border-radius: 8px;
-  border: 2px solid #ccc;
-  font-size: 1rem;
-  outline: none;
-}
-
-.search-bar input:focus {
-  border-color: #111;
-}
-
-/* Responsive Breakpoints */
-@media (max-width: 1024px) {
-  header h1 { font-size: 2rem; }
-}
-
-@media (max-width: 768px) {
-  header h1 { font-size: 1.8rem; }
-  header p { font-size: 1rem; }
-
-  .gallery {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 12px;
-  }
-}
-
-@media (max-width: 480px) {
-  header h1 { font-size: 1.5rem; }
-  header p { font-size: 0.9rem; }
-
-  .gallery {
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-  }
-}
-
-
-
-/* Look Container */
+/* ---------------- Look Pages ---------------- */
 .look-container {
   display: flex;
   justify-content: center;
@@ -159,7 +106,7 @@ footer a {
   max-width: 1000px;
 }
 
-/* Main Look */
+/* Main Look Image */
 .main-look {
   text-align: center;
 }
@@ -193,8 +140,8 @@ footer a {
 
 .square-box img {
   width: 100%;
-  aspect-ratio: 1 / 1;   /* ✅ force square shape */
-  object-fit: cover;     /* ✅ crop to fit square nicely */
+  aspect-ratio: 1 / 1;   /* force square */
+  object-fit: cover;      /* crop nicely */
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   transition: transform 0.3s, box-shadow 0.3s;
@@ -205,22 +152,98 @@ footer a {
   box-shadow: 0 6px 20px rgba(0,0,0,0.3);
 }
 
-/* Responsive Adjustments */
+/* ---------------- Makeup Gallery ---------------- */
+.makeup-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 0 20px 50px;
+}
+
+.makeup-card {
+  text-align: center;
+}
+
+.makeup-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.makeup-card img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+/* ---------------- Section Title ---------------- */
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin: 50px 0 20px;
+  color: #333;
+}
+
+/* ---------------- Footer ---------------- */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #111;
+  color: #fff;
+  margin-top: 30px;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* ---------------- Responsive Breakpoints ---------------- */
+@media (max-width: 1024px) {
+  header h1 { font-size: 2rem; }
+  .main-look img { max-width: 600px; }
+}
+
 @media (max-width: 768px) {
-  .main-look img { max-width: 500px; }
+  header h1 { font-size: 1.8rem; }
+  header p { font-size: 1rem; }
+
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+  }
+
   .square-box {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+
+  .makeup-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
 }
 
 @media (max-width: 480px) {
-  .main-look img { max-width: 100%; }
+  header h1 { font-size: 1.5rem; }
+  header p { font-size: 0.9rem; }
+
+  /* Home page gallery: 2 per row */
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  /* Look page pieces: 2 per row */
   .square-box {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     padding: 15px;
   }
+
+  /* Makeup gallery: 2 per row */
+  .makeup-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 0 10px 30px;
+  }
 }
-
-
