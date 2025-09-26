@@ -1,4 +1,4 @@
-/* ---------------- Reset ---------------- */
+/* ---------------- General Reset ---------------- */
 * {
   margin: 0;
   padding: 0;
@@ -34,7 +34,62 @@ header p {
   opacity: 0.9;
 }
 
-/* ---------------- Look Page Container ---------------- */
+/* ---------------- Search Bar ---------------- */
+.search-bar {
+  margin-top: 20px;
+}
+
+.search-bar input {
+  width: 90%;
+  max-width: 400px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+}
+
+.search-bar input:focus {
+  border-color: #111;
+}
+
+/* ---------------- Gallery (Home & Makeup) ---------------- */
+.gallery, .makeup-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+.gallery a, .makeup-card a {
+  display: block;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+  background: #fff;
+}
+
+.gallery a:hover, .makeup-card a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.gallery img, .makeup-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.look-card p, .makeup-card p {
+  margin-top: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* ---------------- Look Pages ---------------- */
 .look-container {
   display: flex;
   justify-content: center;
@@ -51,7 +106,6 @@ header p {
   max-width: 1000px;
 }
 
-/* Main Look Image */
 .main-look img {
   width: 100%;
   max-width: 700px;
@@ -64,7 +118,7 @@ header p {
 /* Square Box for Pieces */
 .square-box {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* default 3 columns */
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 20px;
   width: 100%;
   padding: 20px;
@@ -81,8 +135,7 @@ header p {
 
 .square-box img {
   width: 100%;
-  height: auto;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1 / 1; 
   object-fit: cover;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
@@ -94,7 +147,15 @@ header p {
   box-shadow: 0 6px 20px rgba(0,0,0,0.3);
 }
 
-/* Footer */
+/* ---------------- Section Title ---------------- */
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin: 50px 0 20px;
+  color: #333;
+}
+
+/* ---------------- Footer ---------------- */
 footer {
   text-align: center;
   padding: 15px;
@@ -108,13 +169,22 @@ footer a {
   text-decoration: underline;
 }
 
-/* ---------------- Responsive ---------------- */
+/* ---------------- Responsive Breakpoints ---------------- */
+@media (max-width: 1024px) {
+  header h1 { font-size: 2rem; }
+  .main-look img { max-width: 600px; }
+}
+
 @media (max-width: 768px) {
   header h1 { font-size: 1.8rem; }
   header p { font-size: 1rem; }
 
+  .gallery, .makeup-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+
   .square-box {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   }
 }
 
@@ -122,9 +192,16 @@ footer a {
   header h1 { font-size: 1.5rem; }
   header p { font-size: 0.9rem; }
 
-  .square-box {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on phones */
+  /* Home page & Makeup gallery: 2 per row */
+  .gallery, .makeup-gallery {
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
-    padding: 10px;
+  }
+
+  /* Look page pieces: 2 per row */
+  .square-box {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 15px;
   }
 }
