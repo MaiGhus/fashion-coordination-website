@@ -112,7 +112,7 @@ header p {
 /* Footer */
 footer {
   text-align: center;
-  padding: 15px;
+  padding: 30px;
   background: #111;
   color: #fff;
   margin-top: 20px;
@@ -136,3 +136,4 @@ footer a { color: #fff; text-decoration: underline; }
     padding: 5px;
   }
 }
+
