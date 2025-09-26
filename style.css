@@ -54,14 +54,14 @@ header p {
 }
 
 /* ---------------- Gallery (Home & Makeup) ---------------- */
-.gallery {
+.gallery, .makeup-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 15px;
   padding: 20px;
 }
 
-.gallery a {
+.gallery a, .makeup-card a {
   display: block;
   overflow: hidden;
   border-radius: 12px;
@@ -70,12 +70,12 @@ header p {
   background: #fff;
 }
 
-.gallery a:hover {
+.gallery a:hover, .makeup-card a:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 }
 
-.gallery img {
+.gallery img, .makeup-card img {
   width: 100%;
   height: auto;
   object-fit: cover;
@@ -104,11 +104,6 @@ header p {
   gap: 30px;
   width: 100%;
   max-width: 1000px;
-}
-
-/* Main Look Image */
-.main-look {
-  text-align: center;
 }
 
 .main-look img {
@@ -140,8 +135,8 @@ header p {
 
 .square-box img {
   width: 100%;
-  aspect-ratio: 1 / 1;   /* force square */
-  object-fit: cover;      /* crop nicely */
+  aspect-ratio: 1 / 1; 
+  object-fit: cover;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   transition: transform 0.3s, box-shadow 0.3s;
@@ -150,31 +145,6 @@ header p {
 .square-box img:hover {
   transform: scale(1.08);
   box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-}
-
-/* ---------------- Makeup Gallery ---------------- */
-.makeup-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  padding: 0 20px 50px;
-}
-
-.makeup-card {
-  text-align: center;
-}
-
-.makeup-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.makeup-card img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
 }
 
 /* ---------------- Section Title ---------------- */
@@ -209,17 +179,12 @@ footer a {
   header h1 { font-size: 1.8rem; }
   header p { font-size: 1rem; }
 
-  .gallery {
+  .gallery, .makeup-gallery {
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 12px;
   }
 
   .square-box {
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  }
-
-  .makeup-gallery {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
 }
 
@@ -227,8 +192,8 @@ footer a {
   header h1 { font-size: 1.5rem; }
   header p { font-size: 0.9rem; }
 
-  /* Home page gallery: 2 per row */
-  .gallery {
+  /* Home page & Makeup gallery: 2 per row */
+  .gallery, .makeup-gallery {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
   }
@@ -238,12 +203,5 @@ footer a {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     padding: 15px;
-  }
-
-  /* Makeup gallery: 2 per row */
-  .makeup-gallery {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    padding: 0 10px 30px;
   }
 }
