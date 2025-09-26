@@ -1,96 +1,47 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Fashion Coordination</title>
+  <title>Look 1 - Fashion Coordination</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Important for phones -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>Fashion Coordination</h1>
-    <p>Choose your favorite look to explore its pieces</p>
-
-    <!-- 🔎 Search Bar -->
-    <div class="search-bar">
-      <input type="text" id="searchInput" placeholder="Search Look Number (e.g., Look 5)">
-    </div>
+    <h1>Look 1</h1>
+    <p>Click an item to shop online</p>
   </header>
 
-  <!-- Fashion Looks Section -->
-  <main class="gallery" id="gallery">
-    <div class="look-card" data-name="Look 1">
-      <a href="look1.html"><img src="images/look1.jpg" alt="Look 1"></a>
-      <p>Look 1</p>
-    </div>
-    <div class="look-card" data-name="Look 2">
-      <a href="look2.html"><img src="images/look2.jpg" alt="Look 2"></a>
-      <p>Look 2</p>
-    </div>
-    <div class="look-card" data-name="Look 3">
-      <a href="look3.html"><img src="images/look3.jpg" alt="Look 3"></a>
-      <p>Look 3</p>
-    </div>
-    <div class="look-card" data-name="Look 4">
-      <a href="look4.html"><img src="images/look4.jpg" alt="Look 4"></a>
-      <p>Look 4</p>
-    </div>
-    <div class="look-card" data-name="Look 5">
-      <a href="look5.html"><img src="images/look5.jpg" alt="Look 5"></a>
-      <p>Look 5</p>
-    </div>
-    <div class="look-card" data-name="Look 6">
-      <a href="look6.html"><img src="images/look6.jpg" alt="Look 6"></a>
-      <p>Look 6</p>
-    </div>
-    <div class="look-card" data-name="Look 7">
-      <a href="look7.html"><img src="images/look7.jpg" alt="Look 7"></a>
-      <p>Look 7</p>
+  <main class="look-container">
+    <div class="look-content">
+      <!-- Main Look Image -->
+      <div class="main-look">
+        <img src="images/look1.jpg" alt="Main Look 1">
+      </div>
+
+      <!-- Pieces -->
+      <div class="square-box">
+        <a href="https://onelink.shein.com/16/50933zxsp0sp" target="_blank">
+          <img src="pieces/look1/sz25061041835809494.jpg" alt="بلوزة">
+        </a>
+        <a href="https://onelink.shein.com/16/50931f7cfuhm" target="_blank">
+          <img src="pieces/look1/sz2410174964681371.jpg" alt="تنورة">
+        </a>
+        <a href="https://onelink.shein.com/16/5093eavlvc41" target="_blank">
+          <img src="pieces/look1/sx2406209360174175.jpg" alt="Shoes">
+        </a>
+        <a href="https://onelink.shein.com/16/5093aauco1a5" target="_blank">
+          <img src="pieces/look1/sg25050361627988178.jpg" alt="Bag">
+        </a>
+        <a href="https://onelink.shein.com/16/509381y32hi9" target="_blank">
+          <img src="pieces/look1/sc25090383608242912.jpg" alt="حجاب">
+        </a>
+      </div>
     </div>
   </main>
 
-  <!-- Makeup Section -->
-  <section id="makeup">
-    <h2 class="section-title">Makeup Collection</h2>
-    <div class="gallery">
-      <div class="look-card" data-name="Makeup 1">
-        <a href="https://onelink.shein.com/16/509p1q24p1ji" target="_blank" rel="noopener noreferrer">
-          <img src="makup/sb25032521476261499.jpg" alt="Makeup 1">
-        </a>
-        <p>Makeup 1</p>
-      </div>
-      <div class="look-card" data-name="Makeup 2">
-        <a href="https://onelink.shein.com/16/509zywxuokl2" target="_blank" rel="noopener noreferrer">
-          <img src="makup/sb2106251851479043.jpg" alt="Makeup 2">
-        </a>
-        <p>Makeup 2</p>
-      </div>
-      <div class="look-card" data-name="Makeup 3">
-        <a href="https://onelink.shein.com/16/50a10ub8ny3n" target="_blank" rel="noopener noreferrer">
-          <img src="makup/sb2306276181121814.jpg" alt="Makeup 3">
-        </a>
-        <p>Makeup 3</p>
-      </div>
-    </div>
-  </section>
-
   <footer>
-    <p>&copy; 2025 Fashion Coordination. All rights reserved.</p>
+    <p><a href="index.html">⬅ Back to Home</a></p>
   </footer>
-
-  <!-- 🔎 Search Script -->
-  <script>
-    const searchInput = document.getElementById("searchInput");
-    const lookCards = document.querySelectorAll(".look-card");
-
-    searchInput.addEventListener("keyup", function() {
-      const filter = searchInput.value.toLowerCase();
-      lookCards.forEach(card => {
-        const name = card.getAttribute("data-name").toLowerCase();
-        card.style.display = name.includes(filter) ? "" : "none";
-      });
-    });
-  </script>
 </body>
 </html>
-
