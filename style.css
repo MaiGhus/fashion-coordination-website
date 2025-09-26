@@ -172,7 +172,6 @@ footer a {
 /* ---------------- Responsive Breakpoints ---------------- */
 @media (max-width: 1024px) {
   header h1 { font-size: 2rem; }
-  .main-look img { max-width: 600px; }
 }
 
 @media (max-width: 768px) {
@@ -180,11 +179,11 @@ footer a {
   header p { font-size: 1rem; }
 
   .gallery, .makeup-gallery {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
   }
 
   .square-box {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -192,10 +191,11 @@ footer a {
   header h1 { font-size: 1.5rem; }
   header p { font-size: 0.9rem; }
 
-  /* Home page & Makeup gallery: 2 per row */
+  /* Home & Makeup gallery: 2 images per row on phones */
   .gallery, .makeup-gallery {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
+    padding: 10px;
   }
 
   /* Look page pieces: 2 per row */
